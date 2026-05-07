@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartoon Video Maker</title>
+  <style>
+    body{
+      font-family: Arial;
+      text-align:center;
+      background:#f0f8ff;
+    }
+
+    h1{
+      color:#ff6600;
+    }
+
+    #cartoon{
+      width:150px;
+      animation: move 2s infinite alternate;
+    }
+
+    @keyframes move{
+      from{transform:translateX(0);}
+      to{transform:translateX(200px);}
+    }
+
+    button{
+      padding:10px 20px;
+      font-size:18px;
+      background:orange;
+      border:none;
+      border-radius:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>My Cartoon Video Maker</h1>
+
+<img id="cartoon"
+src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg">
+
+<br><br>
+
+<button onclick="speakText()">Play Voice</button>
+
+<script>
+function speakText(){
+  let speech = new SpeechSynthesisUtterance(
+    "Hello! Welcome to cartoon video maker."
+  );
+
+  speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
